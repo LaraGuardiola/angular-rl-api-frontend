@@ -1,0 +1,12 @@
+
+<div class="field centered">
+    <form (ngSubmit)="onSubmit()" class="form" [formGroup]="authForm">
+        <h2>Sign in</h2>
+
+        <app-input label="Email" type="text" [control]="$any(authForm.get('email'))"></app-input>
+        
+        <app-input label="Password" type="password"[control]="$any(authForm.get('password'))"></app-input>
+        
+        <button [disabled]="authForm.invalid" type="submit" class="">Submit</button>
+    </form>
+</div>

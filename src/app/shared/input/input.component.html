@@ -1,0 +1,34 @@
+<div class="field">
+    <div class="titles">
+        <label>{{ label }}</label>
+    </div>
+    <input [type]="type" class="input" [formControl]="control">
+    <div *ngIf="showErrors()" class="field">
+        <p class="helper-msg" *ngIf="control.errors!['required']">
+            value is required
+        </p>
+        <p class="helper-msg" *ngIf="control.errors!['minlength']">
+            Current characters:
+            {{ control.errors!['minlength'].actualLength }} /
+            Minimum characters:
+            {{ control.errors!['minlength'].requiredLength }}
+        </p>
+        <p class="helper-msg" *ngIf="control.errors!['maxlength']">
+            Current characters:
+            {{ control.errors!['maxlength'].actualLength }} /
+            Max characters:
+            {{ control.errors!['maxlength'].requiredLength }}
+            
+        </p>
+        <p class="helper-msg" *ngIf="control.errors!['pattern']">
+            Invalid format
+        </p>
+        <p class="helper-msg" *ngIf="control.errors!['nonUniqueUsername']">
+            Username is taken
+        </p>
+        <p class="helper-msg" *ngIf="control.errors!['noConnection']">
+            No idea what is happening
+        </p>
+    </div>
+    
+</div>
