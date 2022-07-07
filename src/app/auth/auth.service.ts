@@ -7,7 +7,7 @@ import { Token } from './interfaces/token'
 })
 export class AuthService {
 
-  baseURL = 'http://localhost:4000/api/auth/signin'
+  baseURL = 'https://rl-api-match-tracker.herokuapp.com/api/auth/signin'
 
   constructor(private http: HttpClient) { }
 
